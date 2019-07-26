@@ -5,9 +5,16 @@ class Student extends React.Component {
 
   constructor(props) {
     super(props);
+
+    // Process the query string
     let values = queryString.parse(this.props.location.search);
     this.version = parseInt(values.version);
     console.log(`Using version ${this.version} of the student app`);
+
+    // Get the pre-defined values
+    // STUFF
+
+    // 
   }
 
   render() {
@@ -31,6 +38,7 @@ class Student extends React.Component {
       <div className="Student">
         This is the student portion of the app. Insert question-asking mechanics here.
         {first} {second}
+        <QuestionCard />
       </div>
     );
   }
@@ -85,7 +93,13 @@ class QuestionCard extends React.Component {
   render() {
     return (
       <div className="QuestionCard">
-        
+        <div className="card bg-light mb-3 text-left">
+          <div className="card-body">
+            <h5 className="card-title">Light card title</h5>
+            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <button type="button float-right" className="btn btn-primary">➕</button>
+          </div>
+        </div>
       </div>
     );
   }
